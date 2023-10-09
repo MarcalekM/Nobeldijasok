@@ -20,7 +20,10 @@ namespace Nobeldijasok
             Console.WriteLine($"\tÖsszesen {dijazottak.Count} db díjazott adatai találhatóak meg");
 
             Console.WriteLine("4.feladat:");
-
+            var f4 = dijazottak
+                .OrderBy(d => d.Ev)
+                .Last();
+            Console.WriteLine($"\tAz utolsó díjátadó éve: {f4.Ev}");
         }
     }
 }
