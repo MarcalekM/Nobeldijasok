@@ -10,12 +10,12 @@ namespace Nobeldijasok
     {
         static void Main(string[] args)
         {
-            var dijazottak = new List<Dijazott>();
+            List<Dijazott> dijazottak = new ();
             var sr = new StreamReader(
-                path: @"..\..\..\src\orvosi_nobeldijak.txt",
-                encoding: System.Text.Encoding.UTF8);
+                @"..\..\..\src\orvosi_nobeldijak.txt",
+                System.Text.Encoding.UTF8);
             _ = sr.ReadLine();
-            while (!sr.EndOfStream) dijazottak.Add(new Dijazott(sr.ReadLine()));
+            while (!sr.EndOfStream) dijazottak.Add(new(sr.ReadLine()));
 
             Console.WriteLine("3. feladat:");
             Console.WriteLine($"\tÖsszesen {dijazottak.Count} db díjazott adatai találhatóak meg");
